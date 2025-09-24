@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tickets Dashboard</h1>
+        <table id="ticketsTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Subject</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Tickets se llenan con JS -->
+            </tbody>
+        </table>
+        <a href="index.html" class="button" style="display:inline-block;margin-top:20px;">Back to Submit Ticket</a>
+    </div>
+    <script>
+        function loadTickets() {
+            let tickets = JSON.parse(localStorage.getItem("tickets")) || [];
+            const tbody = document.querySelector("#ticketsTable tbody");
+            tbody.innerHTML = "";
+            tickets.forEach(ticket => {
+                let tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td>${ticket.id}</td>
+                    <td>${ticket.name}</td>
+                    <td>${ticket.email}</td>
+                    <td>${ticket.subject}</td>
+                    <td>${ticket.status}</td>
+                    <td>
+                        <select onchange="updateStatus(${ticket.id}, this.value)">
+                            <option value="Pending" ${ticket.status==='Pending'?'selected':''}>Pending</option>
+                            <option value="In Progress" ${ticket.status==='In Progress'?'selected':''}>In Progress</option>
+                            <option value="Resolved" ${ticket.status==='Resolved'?'selected':''}>Resolved</option>
+                        </select>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function updateStatus(id, status) {
+            let tickets = JSON.parse(localStorage.getItem("tickets")) || [];
+            tickets = tickets.map(ticket => {
+                if(ticket.id === id) ticket.status = status;
+                return ticket;
+            });
+            localStorage.setItem("tickets", JSON.stringify(tickets));
+            loadTickets();
+        }
+
+        loadTickets();
+    </script>
+</body>
+</html>

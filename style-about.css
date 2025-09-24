@@ -1,0 +1,161 @@
+/* style-about.css */
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #1a182b;
+  color: #ffffff;
+}
+
+/* Botón Back to Home como Projects */
+header {
+  padding: 1rem;
+}
+
+.back-btn {
+  color: #f20000;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+
+
+.about-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #a299cc, #1a182b);
+}
+
+.about-intro h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.about-intro p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: auto;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  background-color: #222;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0e0e0e;
+}
+
+.skills {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #0f0f0f;
+}
+
+.skills h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #f20000;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.skill-card {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.skill-card h3 {
+  margin-bottom: 15px;
+  color: #f20000;
+}
+
+.skill-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+footer {
+  background-color: #0f0f0f;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.btn {
+  background-color: #f20000;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #c00000;
+}
+.certifications {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #0f0f0f;
+}
+
+.certifications h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #f20000;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.cert-card {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.cert-card h3 {
+  margin-bottom: 15px;
+  color: #f20000;
+}
+
+.cert-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}

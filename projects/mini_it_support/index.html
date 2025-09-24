@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini IT Support Desk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mini IT Support Desk</h1>
+        <form id="ticketForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Your Name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Your Email" required>
+            
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" placeholder="Subject" required>
+            
+            <label for="description">Description:</label>
+            <textarea id="description" rows="5" placeholder="Describe your issue..." required></textarea>
+            
+            <button type="submit">Submit Ticket</button>
+        </form>
+        <p id="message"></p>
+        <a href="admin.html" class="button" style="display:inline-block;margin-top:20px;">Go to Dashboard</a>
+    </div>
+    <script>
+        document.getElementById("ticketForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            const ticket = {
+                id: Date.now(),
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                subject: document.getElementById("subject").value,
+                description: document.getElementById("description").value,
+                status: "Pending"
+            };
+            
+            let tickets = JSON.parse(localStorage.getItem("tickets")) || [];
+            tickets.push(ticket);
+            localStorage.setItem("tickets", JSON.stringify(tickets));
+            
+            document.getElementById("message").innerText = "Ticket submitted successfully!";
+            document.getElementById("ticketForm").reset();
+        });
+    </script>
+</body>
+</html>

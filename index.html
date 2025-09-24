@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portafolio de Rodrigo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  
+</head>
+<body id="background">
+  <header>
+ <!-- Botón de menú -->
+<div class="menu-toggle" onclick="toggleMenu()">
+  <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+</div>
+
+<!-- Menú animado -->
+<div id="menu-panel" class="menu-panel">
+  <div class="menu-background" id="menu-background"></div>
+  <div class="menu-content">
+    <ul class="menu-links">
+      <li style="--i:1"><a href="#index.html"><span>01</span> HOME</a></li>
+      <li style="--i:2"><a href="projects.html"><span>02</span> PROJECTS</a></li>
+      <li style="--i:3"><a href="about.html"><span>03</span> ABOUT</a></li>
+      <li style="--i:4"><a href="contact.html"><span>04</span> CONTACT</a></li>
+    </ul>
+    <div class="social" style="--i:5">
+      <a href="https://www.linkedin.com/in/tuusuario" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+
+
+  </header>
+
+  <section class="hero">
+    <div class="intro">
+      <h1>HEY, I'M RODRIGO</h1>
+      <p>I am a Software Engineer specialized in web development, automation, and data analysis.</p>
+      <div class="buttons">
+        <a href="projects.html" class="btn">→ See my projects</a>
+        <a href="about.html" class="btn alt">→ More about me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts para fondo animado -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+<script>
+  VANTA.NET({
+    el: "#background",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  color: 0xf20000,
+  backgroundColor: 0x1a182b,
+  points: 9.00,
+  maxDistance: 22.00,
+  spacing: 13.00,
+  showDots: false
+  })
+</script>
+<div class="overlay"></div>
+
+
+<script>
+  let isMenuOpen = false;
+
+  function toggleMenu() {
+    const panel = document.getElementById("menu-panel");
+
+    if (!isMenuOpen) {
+      panel.classList.remove("slide-out");
+      panel.style.display = "flex";
+      void panel.offsetWidth; // reinicia la animación
+      panel.classList.add("slide-in");
+      isMenuOpen = true;
+    } else {
+      panel.classList.remove("slide-in");
+      panel.classList.add("slide-out");
+      isMenuOpen = false;
+
+      // Espera al final de la animación para ocultar
+      setTimeout(() => {
+        panel.style.display = "none";
+      }, 600);
+    }
+  }
+</script>
+
+
+<script>
+  function toggleMenu() {
+    const panel = document.getElementById("menu-panel");
+    panel.classList.toggle("active");
+  }
+</script>
+<script src="three.r134.min.js"></script>
+<script src="vanta.net.min.js"></script>
+<script>
+  let vantaEffect = null;
+
+  function toggleMenu() {
+    const panel = document.getElementById("menu-panel");
+    panel.classList.toggle("active");
+
+    if (panel.classList.contains("active") && !vantaEffect) {
+      vantaEffect = VANTA.NET({
+        el: "#menu-background",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0xf20000,
+        backgroundColor: 0x0f0f0f,
+        points: 5.00,
+        maxDistance: 18.00,
+        spacing: 14.00,
+        showDots: false
+      });
+    }
+  }
+</script>
+
+
+
+
+</body>
+</html>

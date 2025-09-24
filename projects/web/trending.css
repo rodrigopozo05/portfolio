@@ -1,0 +1,286 @@
+body {
+  margin: 0;
+  font-family: 'Lora', serif;
+  background-color: #e6e6fa;
+  color: #333;
+}
+
+.top-bar {
+  background-color: #4DB6Ac;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+}
+
+header {
+  text-align: center;
+  padding: 0px 0px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+header h1 span {
+  font-weight: bold;
+  color: #000;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 0px;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.logo {
+  height: 130px; /* Ajusta el tamaño según tu logo */
+  width: auto;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+}
+
+.search-box {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.categorias {
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.grid-categorias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.grid-categorias article {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+  background-color: #fff;
+}
+
+.grid-categorias article:hover {
+  transform: scale(1.03);
+}
+
+.grid-categorias img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.grid-categorias h3 {
+  margin: 15px 0;
+}
+
+footer {
+  background-color: #4DB6Ac;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}
+
+
+
+
+.popular-latin-desserts {
+  background-color: #e6e6fa; /* fondo suave como "Let's Bake Sweets" */
+  padding: 50px 20px;
+  text-align: center;
+}
+
+
+
+
+
+
+.featured-recipe {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+.featured-recipe img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+  flex: 1;
+}
+
+.featured-text {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+}
+
+.featured-text h3 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.featured-text p {
+  font-size: 1.1em;
+  color: #555;
+  line-height: 1.6;
+}
+
+.reader-title {
+  text-align: center;
+  margin: 50px 0 20px;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333;
+}
+
+.reader-favorites {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.popular-latin-desserts h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #333;
+}
+
+.dessert-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.dessert-card {
+  max-width: 250px;
+  text-align: center;
+}
+
+.dessert-card img {
+  width: 100%;
+  height: 400px; /* puedes ajustar esta altura */
+  object-fit: cover; /* recorta y centra la imagen sin deformarla */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+.category {
+  margin-top: 10px;
+  color: #888;
+  font-size: 0.9em;
+}
+
+.dessert-card h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 5px;
+  color: #000;
+}
+
+
+.dessert-card {
+  transition: transform 0.2s ease; /* animación suave */
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.dessert-card:hover {
+  transform: scale(1.03); /* efecto agrandar */
+}
+
+.category-section {
+  background-color: #f9f6f1; /* color beige claro similar a la imagen */
+  padding: 10px 100px;
+}
+
+.category-title {
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.category-circles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.category-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.category-item img:hover {
+  transform: scale(1.05);
+}
+
+.category-item p {
+  margin-top: 10px;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #444;
+}
